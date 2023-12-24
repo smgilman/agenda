@@ -4,12 +4,22 @@ from tkcalendar import Calendar
 from datetime import date
 import calendar
 
+""" 
+Very basic program that allows a user to select a day and add any number of events. Save option will be added
+after basic functionality is completed.
+
+author: Sharon Gilman (smgilman)
+date created: 12/24/2023
+"""
+
 def _display_calendar():
+  """ Dislays today's month, with the option to cycle through the year's months. """
   today = date.today()
   cal = Calendar(year=today.year, firstweekday="sunday")
   cal.pack()
 
 def _create_menu(root):
+  """ Creates menu at the top of the window. """
   menu_bar = Menu(master=root)
   root.config(menu=menu_bar)
   file_menu = Menu(master=menu_bar)
