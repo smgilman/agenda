@@ -13,9 +13,9 @@ date created: 12/24/2023
 """
 
 def _display_calendar():
-  """ Dislays today's month, with the option to cycle through the year's months. """
+  """ Displays today's month, with the option to cycle through the year's months. """
   today = date.today()
-  cal = Calendar(year=today.year, firstweekday="sunday")
+  cal = Calendar(year=today.year, firstweekday="sunday", showweeknumbers=False)
   cal.pack()
 
 def _create_menu(root):
@@ -32,6 +32,7 @@ def _create_menu(root):
 
 def main():
   root = Tk()
+  root.geometry("600x600")
   root.title("Agenda")
   _create_menu(root)
   display_calendar = Button(root, text="Display Calendar", command=_display_calendar)
